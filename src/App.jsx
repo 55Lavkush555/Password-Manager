@@ -77,8 +77,8 @@ function App() {
 
           </div>
 
-          <div className="w-full mt-2.5">
-            <h1 className="text-2xl font-bold">Your Passwords </h1>
+          <h1 className="text-2xl font-bold mt-2.5">Your Passwords </h1>
+          <div className="w-full mt-2.5 overflow-auto">
 
             {PassArray.length == 0 && <div>Not any password.</div>}
 
@@ -96,10 +96,10 @@ function App() {
                 <tbody className="bg-green-400">
                   {PassArray.map(item => {
                     return (<tr key={item.id} className="mt-10">
-                      <td className="overflow-hidden"><a href={item.site}>{item.site}</a></td>
-                      <td className="overflow-hidden cursor-pointer" onClick={()=>{copy(item.username)}}>{item.username}</td>
-                      <td className="overflow-hidden cursor-pointer" onClick={()=>{copy(item.passoword)}}>{item.password}</td>
-                      <td className="overflow-hidden"><button className="mt-1 bg-red-600 px-2 rounded-full hover:bg-red-500 cursor-pointer" onClick={()=> {deletePass(item.id)}}>Delete</button></td>
+                      <td className="overflow-hidden px-1.5"><a href={item.site}>{item.site}</a></td>
+                      <td className="overflow-hidden px-1.5 cursor-pointer" onClick={()=>{copy(item.username)}}>{item.username}</td>
+                      <td className="overflow-hidden px-1.5 cursor-pointer" onClick={()=>{copy(item.passoword)}}>{item.password}</td>
+                      <td className="overflow-hidden px-1.5"><button className="mt-1 bg-red-600 px-2 rounded-full hover:bg-red-500 cursor-pointer" onClick={()=> {deletePass(item.id)}}>Delete</button></td>
                     </tr>)
                   })}
                 </tbody>
